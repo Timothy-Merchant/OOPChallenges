@@ -11,7 +11,7 @@ class Challenges
         /* load challenges */
         /* uncomment one at a time */
 
-        // $this->recipe(); // Tricksy 01
+        $this->recipe(); // Tricksy 01
         // $this->superString(); // Tricksy 02
     }
 
@@ -64,14 +64,14 @@ class Challenges
 
     public function superString()
     {
-        echo "\nTricksy 02\n";
+        // echo "\nTricksy 02\n";
 
-        $string = new SuperString("hello");
+        // $string = new SuperString("hello");
 
-        // chain a few methods together
-        $string->titleCase()->append(",")->append(" ");
+        // // chain a few methods together
+        // $string->titleCase()->append(",")->append(" ");
 
-        // treat like a string
-        dump($string . "World!"); // "Hello World!"
+        // // treat like a string
+        // dump($string . "World!"); // "Hello World!"
     }
 }

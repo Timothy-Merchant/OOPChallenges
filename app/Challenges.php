@@ -16,12 +16,12 @@ class Challenges
         // $this->howdy(); // 01
         // $this->wombat(); // 02
         // $this->stringyRedux(); // 03
-        $this->shopping(); // 04
+        // $this->shopping(); // 04
 
         /* kick off tricksy challenges */
 
-        // $tricksy = new Tricksy();
-        // $tricksy->start();
+        $tricksy = new Tricksy();
+        $tricksy->start();
     }
 
     public function howdy()

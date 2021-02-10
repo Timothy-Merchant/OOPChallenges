@@ -13,8 +13,8 @@ class Challenges
         /* load challenges */
         /* uncomment one at a time */
 
-        $this->howdy(); // 01
-        // $this->wombat(); // 02
+        // $this->howdy(); // 01
+        $this->wombat(); // 02
         // $this->stringyRedux(); // 03
         // $this->shopping(); // 04
 
@@ -37,22 +37,22 @@ class Challenges
 
     public function wombat()
     {
-        // echo "\nQuestion 02\n";
+        echo "\nQuestion 02\n";
 
-        // $tish = new Marsupials\Wombat("Tish");
-        // $fonny = new Marsupials\Wombat("Fonny");
+        $tish = new Marsupials\Wombat("Tish");
+        $fonny = new Marsupials\Wombat("Fonny");
 
-        // $tishName = $tish->getName();
-        // dump($tishName); // "Tish"
+        $tishName = $tish->getName();
+        dump($tishName); // "Tish"
 
-        // $greeting = $tish->sayHelloTo($fonny);
-        // dump($greeting); // "Hello Fonny"
+        $greeting = $tish->sayHelloTo($fonny);
+        dump($greeting); // "Hello Fonny"
 
-        // $tish->giveHug();
-        // dump($tish->howManyHugs()); // 1
+        $tish->giveHug();
+        dump($tish->howManyHugs()); // 1
 
-        // $fonny->giveHug()->giveHug()->giveHug();
-        // dump($fonny->howManyHugs()); // 3
+        $fonny->giveHug()->giveHug()->giveHug();
+        dump($fonny->howManyHugs()); // 3
     }
 
     public function stringyRedux()

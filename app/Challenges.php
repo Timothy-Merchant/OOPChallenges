@@ -14,8 +14,8 @@ class Challenges
         /* uncomment one at a time */
 
         // $this->howdy(); // 01
-        $this->wombat(); // 02
-        // $this->stringyRedux(); // 03
+        // $this->wombat(); // 02
+        $this->stringyRedux(); // 03
         // $this->shopping(); // 04
 
         /* kick off tricksy challenges */
@@ -57,18 +57,18 @@ class Challenges
 
     public function stringyRedux()
     {
-        // echo "\nQuestion 03\n";
+        echo "\nQuestion 03\n";
 
-        // $string1 = new Redux\Stringy("Oop");
-        // dump($string1->lower()->repeat(2)->get()); // "oopoop"
+        $string1 = new Redux\Stringy("Oop");
+        dump($string1->lower()->repeat(2)->get()); // "oopoop"
 
-        // $string2 = new Redux\Stringy("Spoon");
-        // dump($string2->repeat(2)->upper()->append("!")->get()); // "SPOONSPOON!"
+        $string2 = new Redux\Stringy("Spoon");
+        dump($string2->repeat(2)->upper()->append("!")->get()); // "SPOONSPOON!"
 
-        // $string3 = new Redux\Stringy("Na");
+        $string3 = new Redux\Stringy("Na");
 
-        // // "NaNa NaNa NaNa NaNa NaNa NaNa NaNa NaNa Batman!"
-        // dump($string3->repeat(2)->append(" ")->repeat(8)->append("Batman!")->get());
+        // "NaNa NaNa NaNa NaNa NaNa NaNa NaNa NaNa Batman!"
+        dump($string3->repeat(2)->append(" ")->repeat(8)->append("Batman!")->get());
     }
 
     public function shopping()

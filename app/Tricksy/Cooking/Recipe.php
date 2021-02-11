@@ -39,7 +39,7 @@ class Recipe
 
     public function vegan()
     {
-        return count(collect($this->ingredients)->filter(fn ($ingredient) =>
+        return count($this->ingredients->filter(fn ($ingredient) =>
         $ingredient[0]->vegan())) > 0 ? 'Not vegan friendly.' : 'Vegan friendly.';
     }
 }

@@ -16,7 +16,7 @@ class Recipe
         $this->ingredients = collect([]);
     }
 
-    public function addIngredient(Ingredient $ingredient, int $amount): void
+    public function addIngredient(Ingredient $ingredient, string $amount): void
     {
         $this->ingredients->push([$ingredient, $amount]);
     }

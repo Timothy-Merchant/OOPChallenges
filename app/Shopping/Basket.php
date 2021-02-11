@@ -24,8 +24,13 @@ class Basket
         return $this->items->map(fn ($item) => $item->type())->all();
     }
 
+    public function priceFormatted(float $price): string
+    {
+        return "£" . number_format($price, 2, '.', ',');
+    }
+
     public function total(): string
     {
-        return $this->formatter->priceFormatted($this->items->map(fn ($item) => $item->price())->sum());
+        return $this->priceFormatted(($this->items->map(fn ($item) => $item->price())->sum()));
     }
 }

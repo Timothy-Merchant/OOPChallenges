@@ -75,13 +75,12 @@ class Challenges
     {
         echo "\nQuestion 04\n";
 
-        $basket = new Shopping\Basket();
-        $priceFormatter = new Shopping\PriceFormatter();
+        $basket = new Shopping\Basket();        
 
         $item1 = new Shopping\BasketItem("coffee", 3.50);
         $item2 = new Shopping\BasketItem("tea", 2.50);
 
-        $basket->add($item1, $priceFormatter)->add($item2, $priceFormatter);
+        $basket->add($item1)->add($item2);
 
         dump($basket->total()); // £6.00
         dump($basket->items()); // ["coffee","tea"]

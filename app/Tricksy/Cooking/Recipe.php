@@ -12,11 +12,12 @@ class Recipe
     public function __construct($recipeName)
     {
         $this->recipeName = $recipeName;
+        $this->ingredients = collect([]);
     }
 
     public function addIngredient($ingredient, $amount)
     {
-        $this->ingredients[] = [$ingredient, $amount];
+        $this->ingredients->push([$ingredient, $amount]);
     }
 
     public function addMethod($method)
@@ -26,12 +27,15 @@ class Recipe
 
     public function display()
     {
-        return "\n{$this->recipeName}\n\nIngredients\n\n" . collect($this->ingredients)->reduce(fn ($acc, $ingredient) => $acc .= "- {$ingredient[1]} {$ingredient[0]->name()}\n", "") . "\nMethod\n\n{$this->method}\n";
+        $ingredientsHeader = "\n{$this->recipeName}\n\nIngredients\n\n";
+        $ingredientsList = $this->ingredients->map(fn ($ingredient) => "- {$ingredient[1]} {$ingredient[0]->name()}\n", "")->join("");
+        $ingredientsMethod = "\nMethod\n\n{$this->method}\n";
+        return $ingredientsHeader . $ingredientsList . $ingredientsMethod;
     }
 
     public function dietary()
     {
-        return implode(", ", collect($this->ingredients)->flatMap(fn ($ingredient) => $ingredient[0]->getDietary())->unique()->values()->all());
+        return implode(", ", $this->ingredients->flatMap(fn ($ingredient) => $ingredient[0]->getDietary())->unique()->values()->all());
     }
 
     public function vegan()

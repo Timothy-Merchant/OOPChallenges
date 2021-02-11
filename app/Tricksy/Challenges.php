@@ -11,8 +11,8 @@ class Challenges
         /* load challenges */
         /* uncomment one at a time */
 
-        // $this->recipe(); // Tricksy 01
-        $this->superString(); // Tricksy 02
+        $this->recipe(); // Tricksy 01
+        // $this->superString(); // Tricksy 02
     }
 
     public function recipe()

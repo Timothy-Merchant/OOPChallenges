@@ -15,12 +15,7 @@ class Basket
     public function items()
     {
         return collect($this->items)->map(fn ($item) => $item->type())->all();
-    }
-
-    public function priceFormatted($item)
-    {
-        return "£" . number_format($item[1], 2, '.', ',');
-    }
+    }    
 
     public function total()
     {

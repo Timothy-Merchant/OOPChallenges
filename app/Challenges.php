@@ -16,7 +16,7 @@ class Challenges
         // $this->howdy(); // 01
         // $this->wombat(); // 02
         // $this->stringyRedux(); // 03
-        // $this->shopping(); // 04
+        $this->shopping(); // 04
 
         /* kick off tricksy challenges */
 
@@ -76,11 +76,12 @@ class Challenges
         echo "\nQuestion 04\n";
 
         $basket = new Shopping\Basket();
+        $priceFormatter = new Shopping\PriceFormatter();
 
         $item1 = new Shopping\BasketItem("coffee", 3.50);
         $item2 = new Shopping\BasketItem("tea", 2.50);
 
-        $basket->add($item1)->add($item2);
+        $basket->add($item1, $priceFormatter)->add($item2, $priceFormatter);
 
         dump($basket->total()); // £6.00
         dump($basket->items()); // ["coffee","tea"]

@@ -6,8 +6,8 @@ namespace App\Shopping;
 
 class PriceFormatter
 {
-    public function priceFormatted($item)
+    public function priceFormatted(float $price): string
     {
-        return "£" . number_format($item, 2, '.', ',');
+        return "£" . number_format($price, 2, '.', ',');
     }
 }

@@ -7,21 +7,20 @@ namespace App\Shopping;
 class BasketItem
 {
     private $type;
-    private $price;
-    private $priceString;
+    private $price;    
 
-    public function __construct($type, $price)
+    public function __construct(string $type, float $price)
     {
         $this->type = $type;
         $this->price = $price;
     }
 
-    public function type()
+    public function type(): string
     {
         return $this->type;
     }
 
-    public function price()
+    public function price(): float
     {
         return $this->price;
     }    

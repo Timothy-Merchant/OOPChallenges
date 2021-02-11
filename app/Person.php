@@ -9,13 +9,13 @@ class Person
     private $firstName;
     private $lastName;
 
-    public function __construct($firstName, $lastName)
+    public function __construct(string $firstName, string $lastName)
     {
         $this->firstName = $firstName;
         $this->lastName = $lastName;
     }
 
-    public function sayHelloTo($person)
+    public function sayHelloTo(Person $person): string
     {
         return "Hello " . $person->firstName;
     }

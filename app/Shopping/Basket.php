@@ -13,18 +13,18 @@ class Basket
         $this->items = collect();
     }
 
-    public function add($item)
+    public function add(BasketItem $item): Basket
     {
         $this->items->push($item);
         return $this;
     }
 
-    public function items()
+    public function items(): array
     {
         return $this->items->map(fn ($item) => $item->type())->all();
     }
 
-    public function total()
+    public function total(): string
     {
         return $this->formatter->priceFormatted($this->items->map(fn ($item) => $item->price())->sum());
     }

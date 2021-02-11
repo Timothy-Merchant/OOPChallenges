@@ -6,8 +6,7 @@ class Recipe
 {
     private $recipeName;
     private $method;
-    private $ingredients;
-    private $isVegan;
+    private $ingredients;    
 
     public function __construct($recipeName)
     {
@@ -27,10 +26,10 @@ class Recipe
 
     public function display()
     {
-        $ingredientsHeader = "\n{$this->recipeName}\n\nIngredients\n\n";
-        $ingredientsList = $this->ingredients->map(fn ($ingredient) => "- {$ingredient[1]} {$ingredient[0]->name()}\n", "")->join("");
-        $ingredientsMethod = "\nMethod\n\n{$this->method}\n";
-        return $ingredientsHeader . $ingredientsList . $ingredientsMethod;
+        $reportHeader = "\n{$this->recipeName}\n\nIngredients\n\n";
+        $reportList = $this->ingredients->map(fn ($ingredient) => "- {$ingredient[1]} {$ingredient[0]->name()}\n", "")->join("");
+        $reportMethod = "\nMethod\n\n{$this->method}\n";
+        return $reportHeader . $reportList . $reportMethod;
     }
 
     public function dietary()

@@ -1,42 +1,44 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Redux;
 
 class Stringy
 {
-    private $userString;
+    private $str;
 
-    public function __construct($userString)
+    public function __construct($str)
     {
-        $this->userString = $userString;
+        $this->str = $str;
     }
 
     public function lower()
     {
-        $this->userString = strtolower($this->userString);
+        $this->str = strtolower($this->str);
         return $this;
     }
 
     public function upper()
     {
-        $this->userString = strtoupper($this->userString);
+        $this->str = strtoupper($this->str);
         return $this;
     }
 
     public function append($stringToAppend)
     {
-        $this->userString .= $stringToAppend;
+        $this->str .= $stringToAppend;
         return $this;
     }
 
     public function repeat($total)
     {
-        $this->userString = str_repeat($this->userString, $total);
+        $this->str = str_repeat($this->str, $total);
         return $this;
     }
 
     public function get()
     {
-        return $this->userString;
+        return $this->str;
     }
 }

@@ -1,12 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Tricksy\Cooking;
 
 class Recipe
 {
     private $recipeName;
     private $method;
-    private $ingredients;    
+    private $ingredients;
 
     public function __construct($recipeName)
     {

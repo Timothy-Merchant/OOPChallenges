@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Tricksy;
 
 class SuperString
@@ -15,7 +17,6 @@ class SuperString
     public function __toString()
     {
         return $this->userString;
-
     }
 
     public function titleCase()

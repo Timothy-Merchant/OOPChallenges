@@ -1,26 +1,31 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Shopping;
 
 class Basket
 {
     private $items;
-    private $formatter;
 
-    public function add($item, $formatter)
+    public function __construct()
     {
-        $this->formatter = $formatter;
-        $this->items[] = $item;
+        $this->items = collect();
+    }
+
+    public function add($item)
+    {
+        $this->items->push($item);
         return $this;
     }
 
     public function items()
     {
-        return collect($this->items)->map(fn ($item) => $item->type())->all();
+        return $this->items->map(fn ($item) => $item->type())->all();
     }
 
     public function total()
     {
-        return $this->formatter->priceFormatted((collect($this->items)->reduce(fn ($acc, $item) => $acc += $item->price(), 0)));
+        return $this->formatter->priceFormatted($this->items->map(fn ($item) => $item->price())->sum());
     }
 }
